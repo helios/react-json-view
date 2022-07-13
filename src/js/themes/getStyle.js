@@ -95,6 +95,7 @@ const getDefaultThemeStyling = theme => {
                     paddingTop: constants.keyValPaddingTop,
                     paddingRight: constants.keyValPaddingRight,
                     paddingBottom: constants.keyValPaddingBottom,
+                    position: 'relative',
                     borderLeft:
                         constants.keyValBorderLeft + ' ' + colors.objectBorder,
                     ':hover': {

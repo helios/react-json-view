@@ -12,6 +12,22 @@ import JsonViewer from './../../src/js/index';
 //render 2 different examples of the react-json-view component
 ReactDom.render(
     <div>
+        <JsonViewer
+            renderLineMarker={(namespace, variable, isHover) => {
+                return isHover ? (
+                    <span style={{ color: 'white' }}>{'>'}</span>
+                ) : null;
+            }}
+            theme="harmonic"
+            src={{
+                a: { b: [1, 2, 3] },
+                c: 'c-value'
+            }}
+            enableClipboard={false}
+            name={'feature_set'}
+            displayDataTypes={false}
+        />
+        <br />
         {/* just pass in your JSON to the src attribute */}
         <JsonViewer
             sortKeys

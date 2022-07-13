@@ -42,6 +42,31 @@ class VariableEditor extends React.PureComponent {
         };
     }
 
+    lineMarker = () => {
+        const { renderLineMarker, namespace, variable } = this.props;
+        const { hovered } = this.state;
+
+        if (!renderLineMarker) {
+            return null;
+        }
+
+        return (
+            <span
+                className="left-row-marker"
+                style={{
+                    position: 'absolute',
+                    left: 0,
+                    top: 0,
+                    bottom: 0,
+                    display: 'inline-flex',
+                    alignItems: 'center'
+                }}
+            >
+                {renderLineMarker(namespace, variable, hovered)}
+            </span>
+        );
+    };
+
     render() {
         const {
             variable,
@@ -129,6 +154,7 @@ class VariableEditor extends React.PureComponent {
                 >
                     {this.getValue(variable, editMode)}
                 </div>
+                {this.lineMarker()}
                 {enableClipboard ? (
                     <CopyToClipboard
                         rowHovered={this.state.hovered}

@@ -141,6 +141,12 @@ export interface ReactJsonViewProps {
    * Default: null
    */
   defaultValue?: TypeDefaultValue | TypeDefaultValue[] | null;
+  /**
+   * Optional custom rendering for JSON line marker
+   *
+   * Default: undefined
+   */
+  renderLineMarker?: (namespace: string[], variable: { name: string; value: string; }, isRowHover: boolean) => JSX.Element | null
 }
 
 export interface OnCopyProps {

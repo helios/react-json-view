@@ -146,7 +146,7 @@ export interface ReactJsonViewProps {
    *
    * Default: undefined
    */
-  renderLineMarker?: (namespace: string[], variable: { name: string; value: string; }, isRowHover: boolean) => JSX.Element | null
+  renderLineMarker?: (namespace: string[], variable: { name: string; value: string | number | boolean | null; }, isRowHover: boolean) => JSX.Element | null
 }
 
 export interface OnCopyProps {
